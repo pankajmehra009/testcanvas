@@ -44,7 +44,16 @@
 
         <script>
             console.log("SFDC Raw Context: <%= context %>");
-            console.log("DD : <%= request.getParameterMap();%>");
+            sfdc.canvas.client.refreshSignedRequest(function(data) {
+              if (data.status === 200) {
+        
+                var signedRequest =  data.payload.response;
+                console.log(signedRequest);
+                var part = signedRequest.split('.')[1];
+                var obj = JSON.parse(sfdc.canvas.decode(part));
+                console.log(obj);
+              }
+            });
         </script>
 
     </body>

@@ -45,8 +45,8 @@
         <script>
             console.log("SFDC Raw Context: <%= context %>");
             Sfdc.canvas.client.refreshSignedRequest(function(data) {
+              console.log("data: ",data);
               if (data.status === 200) {
-        
                 var signedRequest =  data.payload.response;
                 console.log(signedRequest);
                 var part = signedRequest.split('.')[1];
@@ -54,6 +54,8 @@
                 console.log(obj);
               }
             });
+            console.log("Sfdc.canvas: ",Sfdc.canvas);
+            console.log("Sfdc.canvas.oauth.loggedin(): ",Sfdc.canvas.oauth.loggedin());
         </script>
 
     </body>

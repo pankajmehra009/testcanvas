@@ -43,7 +43,7 @@
                 var signedRequest =  data.payload.response;
                 console.log(signedRequest);
                 var part = signedRequest.split('.')[1];
-                var obj = JSON.parse(sfdc.canvas.decode(part));
+                var obj = JSON.parse(Sfdc.canvas.decode(part));
                 console.log(obj);
               }
             });

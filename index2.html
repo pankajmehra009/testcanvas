@@ -57,14 +57,15 @@
            }
            alert("Payload: ", msg.payload);
         }
-                    
-        var ctxlink = Sfdc.canvas.byId("ctxlink");
-        var client = Sfdc.canvas.oauth.client();
-        ctxlink.onclick=ctxlinkHandler;
-        
         function ctxlinkHandler() {
            Sfdc.canvas.client.ctx(callback, client);
         }
+                    
+        var ctxlink = Sfdc.canvas.byId("ctxlink");
+        var client = Sfdc.canvas.oauth.client();
+        ctxlink.onclick = ctxlinkHandler;
+        
+        
     </script>
     
     <a id="ctxlink" href="#">Get Context</a>

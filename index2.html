@@ -27,10 +27,11 @@
         }
         function callback(msg) {
            if (msg.status !== 200) {
-              alert("Error: " + msg.status);
+              console.log("Error: " + msg.status);
               return;
            }
-           alert("Payload: ", msg.payload);
+           console.log("Payload: ", msg.payload);
+            console.log("msg: ", msg);
         }
         function ctxlinkHandler() {
             

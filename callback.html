@@ -43,10 +43,11 @@
                }
                alert("Payload: ", msg.payload);
             }
-                        
+            const searchParams = new URLSearchParams(window.location.hash);
+            console.log(searchParams);
             var ctxlink = Sfdc.canvas.byId("ctxlink");
             var client = Sfdc.canvas.oauth.client();
-           
+            client.oauthToken = searchParams.get('#access_token');
          
             Sfdc.canvas.client.ctx(callback, client);
             

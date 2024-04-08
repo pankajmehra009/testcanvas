@@ -25,6 +25,16 @@
             }
             return false;
         }
+        function callback(msg) {
+           if (msg.status !== 200) {
+              alert("Error: " + msg.status);
+              return;
+           }
+           alert("Payload: ", msg.payload);
+        }
+        function ctxlinkHandler() {
+           Sfdc.canvas.client.ctx(callback, client);
+        }
 
         // Bootstrap the page once the DOM is ready.
         Sfdc.canvas(function() {
@@ -39,6 +49,10 @@
                     .substring(1,40) + "…";
             }
             login.onclick=loginHandler;
+
+            var ctxlink = Sfdc.canvas.byId("ctxlink");
+            var client = Sfdc.canvas.oauth.client();
+            ctxlink.onclick = ctxlinkHandler;
         });
     </script>
     <h1 id="header">Canvas OAuth App</h1>
@@ -49,25 +63,8 @@
         <a id="login" href="#">Login</a><br/>
     </div>
     
-    <script>
-        function callback(msg) {
-           if (msg.status !== 200) {
-              alert("Error: " + msg.status);
-              return;
-           }
-           alert("Payload: ", msg.payload);
-        }
-        function ctxlinkHandler() {
-           Sfdc.canvas.client.ctx(callback, client);
-        }
-                    
-        var ctxlink = Sfdc.canvas.byId("ctxlink");
-        var client = Sfdc.canvas.oauth.client();
-        ctxlink.onclick = ctxlinkHandler;
-        
-        
-    </script>
-    
+    <div>
     <a id="ctxlink" href="#">Get Context</a>
+    </div>
 </body>
 </html>

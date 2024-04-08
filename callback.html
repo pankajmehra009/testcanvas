@@ -48,7 +48,7 @@
             var ctxlink = Sfdc.canvas.byId("ctxlink");
             var client = Sfdc.canvas.oauth.client();
             client.instanceId = '06PBg0000000LPR';
-            client.targetOrigin = 'https://test-heroku-canvas-sf-ad1e5a09a275.herokuapp.com';
+            client.targetOrigin = 'https://test-heroku-canvas-sf-ad1e5a09a275.herokuapp.com/index2.html';
             client.oauthToken = searchParams.get('#access_token');
             console.log(client);
             Sfdc.canvas.client.ctx(callback, client);

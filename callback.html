@@ -1,1 +1,59 @@
 
+<!-- Page -->
+<html>
+    <head>
+        <style> 
+            body {
+                margin: 0px;
+                padding: 0px;
+            }
+            img {
+                width: 100%;
+            }
+            #full-banner {
+                width: 100%;
+                padding: 5px;
+                margin: 0px;
+                height: 16px;
+                text-align: center;
+                font-size: 12px;
+                font-weight: bolder;
+                background-color: #ffaa99;
+                font-family: Arial;
+                vertical-align: middle;
+            }
+            #full-banner p {
+                padding: 0px;
+                margin: auto;
+            }
+        </style>
+        <script type="text/javascript" src="https://tvscreditserviceslimited--losci.sandbox.lightning.force.com/canvas/sdk/js/45.0/canvas-all.js"></script>
+
+    </head>
+    <body>
+
+
+      
+
+        <script>
+            function callback(msg) {
+               if (msg.status !== 200) {
+                  alert("Error: " + msg.status);
+                  return;
+               }
+               alert("Payload: ", msg.payload);
+            }
+                        
+            var ctxlink = Sfdc.canvas.byId("ctxlink");
+            var client = Sfdc.canvas.oauth.client();
+           
+         
+            Sfdc.canvas.client.ctx(callback, client);
+            
+            
+        </script>
+        
+        <a id="ctxlink" href="#">Get Context</a>
+
+    </body>
+</html>
